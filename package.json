@@ -1,0 +1,24 @@
+{
+  "name": "roc8-assignment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.12.1",
+    "bcrypt": "^5.1.1",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.5",
+    "@types/react": "18.2.74",
+    "prisma": "^5.12.1",
+    "typescript": "5.4.4"
+  }
+}
