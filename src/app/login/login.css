@@ -1,0 +1,92 @@
+.container {
+    margin: auto;
+    max-width: 576px;
+    max-height: 614px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    border: 1px solid #C1C1C1;
+}
+
+.title {
+    height: 39px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sub-title {
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    height: 74px;
+    min-width: 100%;
+    font-weight: 400;
+}
+
+.input {
+    border: 1px solid #C1C1C1;
+    border-radius: 6px;
+    min-height: 48px;
+    background: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 32px;
+}
+
+.cta-btn {
+    padding: 18px;
+    border-radius: 6px;
+    background-color: #000000;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 0.07em;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.hr{
+    background-color: #C1C1C1;
+}
+
+.link {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    margin: auto;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #848484;
+}

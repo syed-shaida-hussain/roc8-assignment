@@ -16,7 +16,18 @@ datasource db {
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
-  name    String?
-  password String
-  createdAt DateTime @default(now())
+  name    String
+  password    String
+  isVerified   Boolean @default(false)
+  verifyToken    String @default("")
+  verifyTokenExpiry    DateTime @default(now())
+  createdAt    DateTime @default(now())
+  catPreferences    String[]
+}
+
+model Category {
+  id      Int      @id @default(autoincrement())
+  name    String
+  isChecked   Boolean @default(false)
+  userId Int[]
 }

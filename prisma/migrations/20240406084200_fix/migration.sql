@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "verifyToken" SET DEFAULT '',
+ALTER COLUMN "verifyToken" SET DATA TYPE TEXT;
