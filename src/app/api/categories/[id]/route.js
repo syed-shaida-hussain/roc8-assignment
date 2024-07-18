@@ -9,9 +9,9 @@ export async function PUT (request , {params}) {
         const category = await db.category.findUnique({where : {id : parseInt(id)}})
         const encodedToken = request.cookies.get('token')?.value || '';
         const user = jwt.verify(encodedToken , process.env.SECRET_KEY);
-        let updatedUser;
+        let updatedCat;
         if(category.userId.includes(user.id)){
-            updatedUser = await db.category.update({
+            updatedCat = await db.category.update({
                 where: {
                   id : parseInt(id),
                 },
@@ -22,7 +22,7 @@ export async function PUT (request , {params}) {
                 },
               })
         }else{
-            updatedUser = await db.category.update({
+            updatedCat = await db.category.update({
                 where: {
                   id : parseInt(id),
                 },
@@ -34,9 +34,8 @@ export async function PUT (request , {params}) {
               })
         }
 
-
         return NextResponse.json({
-            updatedUser,
+            updatedCat,
             message : "Category added successfully",
         },{status : 200})
 

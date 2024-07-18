@@ -9,7 +9,8 @@ export async function GET(request){
         return NextResponse.json({
             message : "user found",
             status : 200,
-            userId : user?.id
+            userId : user?.id,
+            user
         })
         
     } catch (error) {

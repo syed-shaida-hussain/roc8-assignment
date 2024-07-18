@@ -1,14 +1,30 @@
+"use client"
+
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
 
 const Navbar = () => {
+    const [user , setUser] = useState()
+    const getUser = async () => {
+        try {
+            const res = await axios.get("/api/user/me")
+            setUser(res?.data?.user)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    useEffect(() => {
+        getUser()
+    },[])
   return (
     <header className='header'>
         <ul className='top-header flex gap-20'>
             <li>Help</li>
             <li>Orders & Returns</li>
-            <li>Hi,John</li>
+            <li>Hi, {user?.name}</li>
         </ul>
         <nav className='navbar flex'>
             <h1 className='title'>Ecommerce</h1>
