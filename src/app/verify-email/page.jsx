@@ -3,6 +3,7 @@
 import axios from "axios"
 import { useRouter } from "next/navigation";
 import { useState } from "react"
+import "./verify-email.css"
 
 const VerifyEmail = ({searchParams}) => {
   const {token} = searchParams;
@@ -41,7 +42,11 @@ const VerifyEmail = ({searchParams}) => {
   }
 
   return (
-    <div>
+    <div className="container">
+      <h2 className="title">Verify your email</h2>
+      <p className="msg">Enter the 8 digit code you have received on ***@gmail.com</p>
+      <div className="otp-container">
+      <div>Code</div>
       {otp.map((value, index) => {
         return (
           <input
@@ -55,7 +60,9 @@ const VerifyEmail = ({searchParams}) => {
           />
         );
       })}
-      <button onClick={() => verifyOtpHandler()}>Verify</button>
+      </div>
+      
+      <button className="cta-btn" onClick={() => verifyOtpHandler()}>VERIFY</button>
       <div>{error && error}</div>
     </div>
   );

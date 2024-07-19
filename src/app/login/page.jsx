@@ -35,11 +35,11 @@ const LoginPage = () => {
           
           <label className= 'label'> Email
             <input value={user?.email} type='email' placeholder='Enter' className= 'input' onChange={(e) => setUser({...user , email : e.target.value})} />
-            <div>{error?.emailError}</div>
+            <div className="error">{error?.emailError}</div>
           </label>
           <label className= 'label'> Password
             <input value={user?.password} type='password' placeholder='Enter' className= 'input' onChange={(e) => setUser({...user , password : e.target.value})}  />
-            <div>{error?.passwordError}</div>
+            <div className="error">{error?.passwordError}</div>
           </label>
           <button type='submit' className= 'cta-btn'>Login</button>
           <hr className="hr"/>

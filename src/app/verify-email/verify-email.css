@@ -1,0 +1,70 @@
+.container {
+    width: 576px;
+    height: 453px;
+    border-radius: 20px 0px 0px 0px;
+    border: 1px solid #C1C1C1;
+    margin: auto;
+    margin-top: 60px;
+    padding: 40px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.msg {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.otp-container {
+    margin-top: 46px;
+}
+
+.otp-input {
+    width: 46px;
+    height: 48px;
+    margin-right: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #C1C1C1;
+    border-radius: 6px;
+}
+
+.cta-btn {
+    margin-top: 64px;
+    padding: 18px 148px;
+    width: 100%;
+    gap: 10px;
+    border-radius: 6px;
+    background: #000000;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+}
+
+@media only screen and (max-width : 800px) {
+    .container {
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    .container {
+        margin-top: 110px;
+    }
+}
+
+@media only screen and (max-width : 510px) {
+    .container {
+        width: fit-content;
+        height: fit-content;
+        margin-top: 140px;
+    }
+}

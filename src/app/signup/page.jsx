@@ -30,15 +30,15 @@ const SignupPage = () => {
           <h1 className= 'title'>Create your account</h1>
           <label className= 'label'> Name
             <input value={user?.name} type='text' placeholder='Enter' className= 'input' onChange={(e) => setUser({...user , name : e.target.value})} />
-            <div>{error?.nameError}</div>
+            <div className="error">{error?.nameError}</div>
           </label>
           <label className= 'label'> Email
             <input value={user?.email} type='email' placeholder='Enter' className= 'input' onChange={(e) => setUser({...user , email : e.target.value})} />
-            <div>{error?.emailError}</div>
+            <div className="error">{error?.emailError}</div>
           </label>
           <label className= 'label'> Password
             <input value={user?.password} type='password' placeholder='Enter' className= 'input' onChange={(e) => setUser({...user , password : e.target.value})}  />
-            <div>{error?.passwordError}</div>
+            <div className="error">{error?.passwordError}</div>
           </label>
           <button type='submit' className= 'cta-btn'>CREATE ACCOUNT</button>
           <Link href= "/login" className= 'link'>Have an account? <span className="bold">LOGIN</span></Link>

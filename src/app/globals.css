@@ -13,14 +13,6 @@ body,
   text-decoration: none;
 }
 
-.otp-input {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
 .header {
   background-color: white;
   height: 100px;
