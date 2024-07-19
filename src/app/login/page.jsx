@@ -15,7 +15,6 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post('/api/user/login' , user);
-      console.log(res)
       if(res?.status === 200){
         router.push('/categories');
       }

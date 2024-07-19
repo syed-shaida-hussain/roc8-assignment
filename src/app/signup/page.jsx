@@ -19,7 +19,6 @@ const SignupPage = () => {
         router.push(`/verify-email?token=${res?.data?.user?.verifyToken}`);
       }
     } catch (error) {
-      console.log(error)
       const {response} = error
       setError({...error , nameError : response?.data?.errors?.name , passwordError : response?.data?.errors?.password , emailError : response?.data?.errors?.email })
     }

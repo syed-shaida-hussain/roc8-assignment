@@ -40,7 +40,6 @@ export async function PUT (request , {params}) {
         },{status : 200})
 
     } catch (error) {
-        console.log(error.message)
         return NextResponse.json({
             message : "could'nt add category",
             error : error.message

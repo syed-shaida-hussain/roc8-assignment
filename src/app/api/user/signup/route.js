@@ -104,7 +104,6 @@ export async function POST (request) {
 
 
     } catch (error) {
-        console.log(error.message)
         const errors = handleErrors(error)
         return NextResponse.json({
             message : "signup failed",
