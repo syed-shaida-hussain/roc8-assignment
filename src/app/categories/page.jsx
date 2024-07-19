@@ -73,14 +73,13 @@ const Categories = () => {
                     <div className='checkbox-container' onClick={() =>changeHandler(cat)}>
                         <input type='checkbox' onChange={() =>changeHandler(cat)} className= {cat?.isChecked || cat?.userId?.includes(userId) ? "checkbox-checked" : "checkbox"} checked = {cat?.isChecked || cat?.userId?.includes(userId)} />
                     </div>
-                   
                     <span className='cat-name'>{cat?.name}</span>
                 </div>)
             }
-            <Pagination totalCategories={categories.length} setCurrentPage={setCurrentPage} categoriesPerPage = {categoriesPerPage} />
+            <Pagination totalCategories={categories.length} setCurrentPage={setCurrentPage} categoriesPerPage = {categoriesPerPage} currentPage={currentPage} />
             </div>
 
-            <button onClick={() => logoutHandler()}>Logout</button>
+            <button className='logout-btn' onClick={() => logoutHandler()}>Logout</button>
         </div>
     )
 }
