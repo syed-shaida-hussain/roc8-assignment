@@ -35,7 +35,7 @@ const VerifyEmail = ({searchParams}) => {
 
   const handleKeyDown = (index,e) => {
     if(e.key === "Backspace")  {
-      if (e.target.previousElementSibling) {
+      if (e.target.previousElementSibling && !otp[7]) {
         e.target.previousElementSibling.focus();
       }
     }
