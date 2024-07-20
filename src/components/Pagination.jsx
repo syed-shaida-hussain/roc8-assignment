@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react'
 
 const Pagination = ({totalCategories, categoriesPerPage, setCurrentPage , currentPage}) => {
