@@ -29,7 +29,7 @@ const Categories = () => {
     const getUser = async () => {
         try {
             const res = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/me`)
-
+            console.log(res)
             setUserId(res?.data?.userId)
         } catch (error) {
             console.log(error.message)
@@ -39,6 +39,7 @@ const Categories = () => {
     const changeHandler = async (cat) => {
             try {
                 const res = await axios.put(`${process.env.NEXT_PUBLIC_DOMAIN}/api/categories/${cat?.id}}` , cat)
+                console.log(res)
                  setCategories(categories.map((item) => 
                     item?.id === cat.id ? {...item , isChecked : !cat.isChecked} : {...item}
                 ))
@@ -53,7 +54,6 @@ const Categories = () => {
         if(res?.status === 200) {
             router.push('/login')
         }
-        console.log(res)
     }
 
     useEffect(()=>{
