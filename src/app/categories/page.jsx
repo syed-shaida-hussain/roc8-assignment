@@ -8,7 +8,9 @@ import { useRouter } from 'next/navigation'
 
 
 const Categories = () => {
-
+    if(!process.env.NEXT_PUBLIC_DOMAIN) {
+        return null;
+    }
     const [categories,setCategories] = useState([])
     const [userId,setUserId] = useState();
     const [currentPage, setCurrentPage] = useState(1)
@@ -17,7 +19,7 @@ const Categories = () => {
     
     const fetchData = async () => {
         try {
-          const res = await axios.get("/api/categories")
+          const res = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/categories`)
           setCategories(res?.data?.categories)
         } catch (error) {
           console.log(error)
@@ -26,7 +28,8 @@ const Categories = () => {
 
     const getUser = async () => {
         try {
-            const res = await axios.get("/api/user/me")
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/me`)
+
             setUserId(res?.data?.userId)
         } catch (error) {
             console.log(error.message)
@@ -35,7 +38,7 @@ const Categories = () => {
 
     const changeHandler = async (cat) => {
             try {
-                const res = await axios.put(`/api/categories/${cat?.id}` , cat)
+                const res = await axios.put(`${process.env.NEXT_PUBLIC_DOMAIN}/api/categories/${cat?.id}}` , cat)
                  setCategories(categories.map((item) => 
                     item?.id === cat.id ? {...item , isChecked : !cat.isChecked} : {...item}
                 ))
@@ -46,7 +49,7 @@ const Categories = () => {
     }
 
     const logoutHandler = async () => {
-        const res = await axios.get("/api/user/logout")
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/logout`)
         if(res?.status === 200) {
             router.push('/login')
         }

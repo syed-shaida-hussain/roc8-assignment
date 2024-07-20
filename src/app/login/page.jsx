@@ -14,7 +14,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/user/login' , user);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/login` , user);
       if(res?.status === 200){
         router.push('/categories');
       }

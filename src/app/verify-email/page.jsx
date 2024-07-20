@@ -14,7 +14,7 @@ const VerifyEmail = ({searchParams}) => {
   const verifyOtpHandler = async () => {
     const combinedOtp = otp.join("")
     try {
-      const res = await axios.post(`/api/user/verify?token=${token}`,combinedOtp)
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/verify?token=${token}`,combinedOtp)
       if(res?.data?.isUserVerified) {
         router.push("/login")
         setOtp(new Array(8).fill(""))
