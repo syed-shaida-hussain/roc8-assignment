@@ -14,7 +14,7 @@ const SignupPage = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/signup` , user);
+      const res = await axios.post('/api/user/signup' , user);
       if(res?.status === 201){
         router.push(`/verify-email?token=${res?.data?.user?.verifyToken}`);
       }
