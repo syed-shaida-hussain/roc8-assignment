@@ -4,7 +4,11 @@ import {NextResponse} from "next/server"
 
 export async function GET () {
     try {
-        const categories = await db.category.findMany()
+        const categories = await db.category.findMany({
+            orderBy: {
+              id: 'asc', 
+            },
+          })
 
         return NextResponse.json({
             message : "All categories",
