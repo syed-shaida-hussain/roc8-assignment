@@ -1,5 +1,6 @@
 "use client"
 
+export const dynamic = 'force-dynamic'
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import "./categories.css"
@@ -29,7 +30,6 @@ const Categories = () => {
     const getUser = async () => {
         try {
             const res = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/user/me`)
-            console.log(res)
             setUserId(res?.data?.userId)
         } catch (error) {
             console.log(error.message)
