@@ -39,6 +39,7 @@ const Categories = () => {
     const changeHandler = async (cat) => {
             try {
                 const res = await axios.put(`${process.env.NEXT_PUBLIC_DOMAIN}/api/categories/${cat?.id}}` , cat)
+                fetchData()
                 console.log(res)
                  setCategories(categories.map((item) => 
                     item?.id === cat.id ? {...item , isChecked : !cat.isChecked} : {...item}
