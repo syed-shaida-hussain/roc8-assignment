@@ -72,9 +72,9 @@ const Categories = () => {
             <div className='categories'>
                 <p className='text'>My saved interests!</p>
                 {
-                currentCategories.map((cat) => <div key={cat?.id} className='category'>
-                    <div className='checkbox-container' onClick={() =>changeHandler(cat)}>
-                        <input type='checkbox' onChange={() =>changeHandler(cat)} className= {cat?.isChecked || cat?.userId?.includes(userId) ? "checkbox-checked" : "checkbox"} checked = {cat?.isChecked || cat?.userId?.includes(userId)} />
+                currentCategories.map((cat) => <div key={cat?.id} className='category' onClick={() =>changeHandler(cat)}>
+                    <div className='checkbox-container' >
+                        <input type='checkbox' className= {cat?.isChecked || cat?.userId?.includes(userId) ? "checkbox-checked" : "checkbox"} checked = {cat?.isChecked || cat?.userId?.includes(userId)} />
                     </div>
                     <span className='cat-name'>{cat?.name}</span>
                 </div>)
